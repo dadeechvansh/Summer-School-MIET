@@ -349,9 +349,20 @@
 # ram={(1,2,3),"r",1,2,3}
 # print(marks)
 
-# collection={1,2,3,4}
-# print(collection)
-# print(type(collection))
+collection={1,2,3,4}
+print(collection)
+print(type(collection))
 
 
-# empty set
+# set
+collection.add(5)
+print(collection)
+
+collection.remove(2)
+print(collection)
+
+collection.pop()
+print(collection)
+
+collection.clear()
+print(collection)
