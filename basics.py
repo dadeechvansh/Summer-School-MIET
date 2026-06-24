@@ -269,10 +269,89 @@
 # null_dict={}
 # print(null_dict)
 
-student={"name":"vansh",
-         "class":"a1",
-         "marks":{26,68,98,54,34}
-         }
-print(student["marks"])
+# student={"name":"vansh",
+#          "class":"a1",
+#          "marks":{26,68,98,54,34}
+#          }
+# print(student["marks"])
 
 # dictionary methods:
+
+#### dict sushant:
+
+# dict["name"] = "raj"
+# print(dict["name"])
+# # print(dict[0])
+# d={}
+# print(d)
+
+# d["name"] = "yasin"
+# print(d)
+
+# print(d["Name"])
+
+# student = {
+#     "name" : "Avleen",
+#     "age": 20,
+#     "score":{
+#         "c":98,
+#         "cyber":56
+#     }
+# }
+# # print(student)
+# # print(student["score"])
+# # print(student["score"]["c"])
+
+# dict = {
+#     "name": "ravi",
+#     "cgpa" : "8.2",
+#     88 : 88
+# }
+
+# for i in dict:
+#     print(i)
+# print(dict.keys())
+# print((list(dict.keys())))
+
+# for i in dict.keys():
+#     print(i)
+
+# print(dict.values())
+# print(list(dict.values()))
+# for i in dict:
+#     print(dict[i])
+# for i in dict.values():
+#     print(i)
+
+# for i,j in dict.items():
+#     print(i,"->",j)
+
+# for i,j in dict.items():
+#     print(i,j)
+# print(list(dict.items()))
+
+
+# print()
+# pair = list(student.items())
+# n = list(pair[2][1].items())
+
+# print(n[0])
+
+### Sets: is a collection of data in unordered method.
+# --> each element in a set must be unique.
+# --> mutable
+# --> each element in a set must be immutable.
+
+# nums={1,2,3}
+# ## marks={[1,2,3],2,3}  ---not a set because list in it is immutable
+# marks={"raj","ravi", "rahul"}
+# ram={"raj",55,"True",0,"True"}
+# ram={(1,2,3),"r",1,2,3}
+# print(marks)
+
+# collection={1,2,3,4}
+# print(collection)
+# print(type(collection))
+
+
+# empty set
