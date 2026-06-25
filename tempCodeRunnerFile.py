@@ -1,4 +1,6 @@
-# print("Hello World")
-x=input("Enter String: ")
-print(len(x))
-print(x)
+
+    for j in range(i): # stars
+        print(" ",end=" ")
+    for j in range(n-i):
+        print("*",end=" ")
+    print()
