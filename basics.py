@@ -300,79 +300,115 @@
 # }
 # print(student)
 # print(student["score"])
-# print(student["score"]["c"])
+# # print(student["score"]["c"])
 
-dict = {
-    "name": "ravi",
-    "cgpa" : "8.2",
-    88 : 88
-}
+# dict = {
+#     "name": "ravi",
+#     "cgpa" : "8.2",
+#     88 : 88
+# }
 
-for i in dict:
-    print(i)
-print(dict.keys())
-print((list(dict.keys())))
+# for i in dict:
+#     print(i)
+# print(dict.keys())
+# print((list(dict.keys())))
 
-for i in dict.keys():
-    print(i)
+# for i in dict.keys():
+#     print(i)
 
-print(dict.values())
-print(list(dict.values()))
-for i in dict:
-    print(dict[i])
-for i in dict.values():
-    print(i)
+# print(dict.values())
+# print(list(dict.values()))
+# for i in dict:
+#     print(dict[i])
+# for i in dict.values():
+#     print(i)
 
-for i,j in dict.items():
-    print(i,"->",j)
+# for i,j in dict.items():
+#     print(i,"->",j)
 
-for i,j in dict.items():
-    print(i,j)
-print(list(dict.items()))
-
-
-print()
-pair = list(student.items())
-n = list(pair[2][1].items())
-
-print(n[0])
-
-### Sets: is a collection of data in unordered method.
-# --> each element in a set must be unique.
-# --> mutable
-# --> each element in a set must be immutable.
-
-# nums={1,2,3}
-# ## marks={[1,2,3],2,3}  ---not a set because list in it is immutable
-# marks={"raj","ravi", "rahul"}
-# ram={"raj",55,"True",0,"True"}
-# ram={(1,2,3),"r",1,2,3}
-# print(marks)
-
-collection={1,2,3,4}
-print(collection)
-print(type(collection))
+# for i,j in dict.items():
+#     print(i,j)
+# print(list(dict.items()))
 
 
-# set
-collection.add(5)
-print(collection)
+# print()
+# pair = list(student.items())
+# n = list(pair[2][1].items())
 
-collection.remove(2)
-print(collection)
+# print(n[0])
 
-collection.pop()
-print(collection)
+# ### Sets: is a collection of data in unordered method.
+# # --> each element in a set must be unique.
+# # --> mutable
+# # --> each element in a set must be immutable.
 
-collection.clear()
-print(collection)
+# # nums={1,2,3}
+# # ## marks={[1,2,3],2,3}  ---not a set because list in it is immutable
+# # marks={"raj","ravi", "rahul"}
+# # ram={"raj",55,"True",0,"True"}
+# # ram={(1,2,3),"r",1,2,3}
+# # print(marks)
 
-#union
-set1={1,2,3,4}
-set2={5,6,7,8}
+# collection={1,2,3,4}
+# print(collection)
+# print(type(collection))
 
-set3=set1.union(set2)
-print(set3)
 
-set4=set1.intersection(set2)
-print(set4)
+# # set
+# collection.add(5)
+# print(collection)
+
+# collection.remove(2)
+# print(collection)
+
+# collection.pop()
+# print(collection)
+
+# collection.clear()
+# print(collection)
+
+# #union
+# set1={1,2,3,4}
+# set2={5,6,7,8}
+
+# set3=set1.union(set2)
+# print(set3)
+
+# set4=set1.intersection(set2)
+# print(set4)
+
+
+
+# n=int(input())
+# x=int(input())
+# for i in range(n*x):
+#     z=int(input())
+#     print(z)
+
+
+#  diagnol sum of matrix: 
+n = int(input("Enter the size of the matrix: "))
+
+matrix = []
+
+print("Enter the matrix elements:")
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(int(input()))
+    matrix.append(row)
+    print(row)
+
+sum = 0
+
+# Sum of both diagonals
+for i in range(n):
+    sum += matrix[i][i]          # Main diagonal
+    sum += matrix[i][n - 1 - i]  # Secondary diagonal
+
+# Subtract the center element if n is odd
+if n % 2 == 1:
+    center_idx=n//2
+    sum -= matrix[center_idx][center_idx]
+
+print("Sum of both diagonals =", sum)
