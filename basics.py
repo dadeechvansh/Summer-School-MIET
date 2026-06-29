@@ -387,28 +387,29 @@
 
 
 #  diagnol sum of matrix: 
-n = int(input("Enter the size of the matrix: "))
+# n = int(input("Enter the size of the matrix: "))
 
-matrix = []
+# matrix = []
 
-print("Enter the matrix elements:")
-for i in range(n):
-    row = []
-    for j in range(n):
-        row.append(int(input()))
-    matrix.append(row)
-    print(row)
+# print("Enter the matrix elements:")
+# for i in range(n):
+#     row = []
+#     for j in range(n):
+#         row.append(int(input()))
+#     matrix.append(row)
+#     print(row)
 
-sum = 0
+# sum = 0
 
-# Sum of both diagonals
-for i in range(n):
-    sum += matrix[i][i]          # Main diagonal
-    sum += matrix[i][n - 1 - i]  # Secondary diagonal
+# # Sum of both diagonals
+# for i in range(n):
+#     sum += matrix[i][i]          # Main diagonal
+#     sum += matrix[i][n - 1 - i]  # Secondary diagonal
 
-# Subtract the center element if n is odd
-if n % 2 == 1:
-    center_idx=n//2
-    sum -= matrix[center_idx][center_idx]
+# # Subtract the center element if n is odd
+# if n % 2 == 1:
+#     center_idx=n//2
+#     sum -= matrix[center_idx][center_idx]
 
-print("Sum of both diagonals =", sum)
+# print("Sum of both diagonals =", sum)
+

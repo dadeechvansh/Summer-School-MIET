@@ -16,6 +16,11 @@
 # Arguments:  it is the value which is supplied to the function.
 # return: return a value of a function where it is called.
 
+#           Parameter                             vs	                       Argument
+# A variable defined in a function definition.	        The actual value passed to the function when it is called.
+# Exists when creating the function.	                Exists when calling the function.
+# Placeholder for data.	                                Real data given to the function.
+
 # ways of writing a function:
 # 1. no argument & no return
 # 2. no argument & with return
@@ -69,9 +74,131 @@
 
 # 4. with argument & no return
 
-def add(x,y):
-    print(x+y)
-a=int(input("Enter Num 1: "))
-b=int(input("Enter Num 2: "))
-add(a,b)
+# def add(x,y):
+#     print(x+y)
+# a=int(input("Enter Num 1: "))
+# b=int(input("Enter Num 2: "))
+# add(a,b)
+
+# # bcdi------------------------------------------
+# def vansh(x,y):
+#     mul1=int(input("Enter Multiple 1: "))
+#     mul2=int(input("Enter Multiple 2: "))
+
+#     ans1=mul1*x
+#     ans2=mul2*y
+#     return (ans1,ans2)
+# a=int(input("Enter Num 1: "))
+# b=int(input("Enter Num 2: "))
+# d,e=vansh(a,b)
+# print(d)
+# print(e)
+# print(vansh(a,b))
+
+# # bcdi max
+# for i in vansh(a,b):
+#     print(i)
+# # ----------------------------------------------
+
+#  find whether a numver is odd or even using function.
+
+# def evodd(num):
+#     if num%2==0:
+#         # return True
+#         # return "Even"
+#         print("Even")
+#     else:
+#         # return False
+#         # return "Odd"
+#         print("Odd")
+# x=int(input("Enter Number: "))
+# # print(evodd(x))
+# evodd(x)
+
+# reverse of a number using string
+
+# def rev(s):
+#     return (s[::-1])
+# s=input()
+# print(rev(s))
+
+
+# reverse of a number using num
+
+# def revers(num):
+#     rev=0
+#     while num > 0:
+#         digit = num % 10
+#         rev = rev*10 + digit
+#         num//= 10
+#     return rev
+# s=int(input("Enter Number: "))
+# print(revers(s))
+# # print(type(revers))
+
+# # 1st iteration -1234
+# digit=1234 % 10 =4
+# rev = 0 * 10 + 4 = 4
+# num//=10 =123
+
+# # 2nd iteration
+# digit=123 % 10 =3
+# rev = 4 * 10 + 3 = 43
+# num//=10 =12
+
+# # 3rd iteration
+
+# digit=12 % 10 =2
+# rev = 43 * 10 + 2 = 432
+# num//=10 =1
+
+
+# # 4th iteration
+
+# digit=1 % 10 =1
+# rev = 432 * 10 + 1 = 4321
+# num//=10 =0
+
+# final ans= 4321
+
+# Types of Argument: 
+
+# 1. Positional Arguments
+# Arguments/ values that are stored in the same order as the parameters
+
+# def add(a, b):
+#     print(a + b)
+# add(10, 20)
+
+# 2. Keyword Arguments
+# Arguments are passed using parameter names.
+
+# def student(name, age):
+#     print(name, age)
+# student(age=20, name="Ansh")
+
+# 3. Default Arguments
+# A parameter has a default value.
+
+# def greet(name="Guest"):
+#     print("Hello", name)
+
+# greet()
+# greet("Ansh")
+
+# Output:
+# Hello Guest
+# Hello Ansh
+
+# 4. Variable-Length Arguments
+# (a) *args – Multiple Positional Arguments
+# def total(*nums):
+#     print(sum(nums))
+
+# total(10, 20, 30, 40)
+
+# Output:
+# 100
+
+# Homework - how to reverse negative number
 
