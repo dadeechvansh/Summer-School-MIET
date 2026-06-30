@@ -202,3 +202,92 @@
 
 # Homework - how to reverse negative number
 
+# num = int(input("Enter a number: "))
+# if num < 0:
+#   sign = -1
+# else :
+#    sign=1
+# num = abs(num)
+# rev = 0
+# while num > 0:
+#     digit = num % 10
+#     rev = rev * 10 + digit
+#     num //= 10
+# print(sign * rev)
+
+
+
+# Local Variable - A local variable is declared inside a function and can only be used within that function.
+
+# def greet():
+#     message = "Hello"   # Local variable
+#     print(message)
+# greet()
+# print(message)  # ERROR
+
+
+# Global Variable - A global variable is declared outside all functions and can be accessed from anywhere in the program.
+
+# name = "Ansh"   # Global variable
+
+# def display():
+#     print(name) 
+
+# display()
+# print(name)
+
+# eg.-
+# a=3
+# def demo():
+#     a=5
+#     print(a)
+# demo()
+# print(a)
+
+# *args (Non-keyword / Positional Arguments)
+# *args collects multiple positional arguments into a tuple.
+
+# def add(*args):
+#     print(args)
+#     print(sum(args))
+
+# add(10, 20, 30, 40)
+ # eg.-
+# student=["ram","Raju","arjun","giya"]
+# def name(*student):
+#     print(student)
+# name(*student)
+# print(type(student))
+# **kwargs (Keyword Arguments)
+# **kwargs collects keyword arguments into a dictionary.
+
+# def student(**kwargs):
+#     print(kwargs)
+
+# student(name="Ansh", age=21, city="Jammu")
+
+student={"name":"Ansh", "age":"21", "class":"first"}
+def student_info(student):
+    print(student["name"])
+    print(student["age"])
+    print(student["class"])
+
+student_info(student)
+
+def create_user(user):
+    print(user)
+create_user({"name":"Rahul","age":20})
+
+def create_students(students):
+    for student in students:
+        print(student)
+
+create_students(["Rahul","Ankit","Aman"])
+
+def get_numbers():
+    return [10,20,30,40]
+print(get_numbers())
+
+def get_student():
+    return {"id":1,"name":"Rahul"}
+print(get_student())
