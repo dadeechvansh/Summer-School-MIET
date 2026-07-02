@@ -266,28 +266,226 @@
 
 # student(name="Ansh", age=21, city="Jammu")
 
-student={"name":"Ansh", "age":"21", "class":"first"}
-def student_info(student):
-    print(student["name"])
-    print(student["age"])
-    print(student["class"])
+# student={"name":"Ansh", "age":"21", "class":"first"}
+# def student_info(student):
+#     print(student["name"])
+#     print(student["age"])
+#     print(student["class"])
 
-student_info(student)
+# student_info(student)
 
-def create_user(user):
-    print(user)
-create_user({"name":"Rahul","age":20})
+# def create_user(user):
+#     print(user)
+# create_user({"name":"Rahul","age":20})
 
-def create_students(students):
-    for student in students:
-        print(student)
+# def create_students(students):
+#     for student in students:
+#         print(student)
 
-create_students(["Rahul","Ankit","Aman"])
+# create_students(["Rahul","Ankit","Aman"])
 
-def get_numbers():
-    return [10,20,30,40]
-print(get_numbers())
+# def get_numbers():
+#     return [10,20,30,40]
+# print(get_numbers())
 
-def get_student():
-    return {"id":1,"name":"Rahul"}
-print(get_student())
+# def get_student():
+#     return {"id":1,"name":"Rahul"}s
+# print(get_student())
+
+# 01-07-26
+
+# Nested Function:
+# def outer():
+#     print("it is outer")
+#     def inner():
+#         print("it is inner")
+#     return inner()
+# x=outer()
+# print(x)
+
+# closure: is useful when you want a function to remember some configuration or statement without using global variables 
+#          repeatedly passing the same argument...
+
+# oneline - function + remembered variable
+
+# closure function is a function that remembers variable of its outer function even after the outer function has finished
+#         executing...
+
+
+# def new(num):
+#     def actual(x):
+#         return x**num
+#     return actual
+# f=new(2)
+# g=new(3)
+
+# # print(f)
+# # print(g)
+
+# print(f(3))
+# print(g(3))
+
+#OWN PRAC.
+
+# def mine(st):
+#     def st_mul(x):
+#         return st*x
+#     return st_mul
+# fstore=mine("Vansh ")
+# fstore2=mine("Dadeech ")
+# xc=fstore(2)
+# xd=fstore2(3)
+# print(f"{xc} {xd}")
+
+#BCDI ----------------------------
+# p=int(input("How Much Time: ")) 
+# for i in range(p):
+#     xc=fstore(1)
+#     xd=fstore2(1)
+#     print(f"{xc} {xd}")
+#----------------------------------
+
+
+# Recursion: when a function calls itself repeatedly
+
+# 2 main things :
+    # 1. Base Case
+    # 2. Work
+
+# print n to 1 backwards:
+
+# def show(n):
+#     if n==0:
+#         return
+#     print(n)
+#     show(n-1)
+#     print("end")
+
+# x=int(input())
+# show(x)
+
+# factorial using recursion
+
+# def fact(x):
+#     if x==0 or x==1:
+#         return 1
+#     else:
+#         return x*fact(x-1)
+# x=int(input())
+# z=fact(x)
+# print(z)
+    
+
+# def sum(x):
+#     if x==0:
+#         return 0
+#     else:
+#         return x+sum(x-1)
+# x=int(input())
+# z=sum(x)
+# print(z)
+    
+
+# def plist(list,index):
+#     if index==len(list):
+#         return
+#     print(list[index])
+#     plist(list,index+1)
+# plist([1,2,3,4,5,6],0)
+
+
+# 02-07-26
+# Lambda Function /anonymous Function:
+
+# A lambda function is a small anonymous (nameless) function that is written in a single line.
+# It is used for simple operations where defining a full function with def is unnecessary.
+
+# Syntax : Lambda Argument, expression.
+
+# def square(x):
+#     print(x**2)
+
+# square(5)
+
+# print((lambda x :x**2)(5))
+
+# x=((lambda a,b,c :a+b+c))
+# print(x(3,4,5))
+
+
+# sum of first n natural number: 
+
+# def sum(n):
+#     return n*(n+1)//2
+# print(sum(5))
+
+# # using lambda 
+# x=((lambda n:n*(n+1)//2))
+# print(x(5))
+
+# filter():
+# returns an iterator where the items are filtered through a function to test if the item is accepted or not.
+
+# ages=[5,12,17,18,24,80,8]
+# def myfun(x):
+#     if x<18:
+#         return False
+#     else:
+#         return True
+    
+# adults=list(filter(myfun,ages))
+# for x in adults:
+#     print(x)
+
+# # Lambda
+
+# adults = list(filter(lambda x: x >= 18, ages))
+# for x in adults:
+#     print(x)
+
+
+# find even values of a list using filter
+
+# nums=[1,3,4,5,2,7,8,98,8]
+# def even(x):
+#     if x%2==0:
+#         return True
+# numbers=list(filter(even,nums))
+# for i in numbers:
+#     print(i)
+
+# numbers1=list(filter(lambda x:x%2==0,nums))
+# for i in numbers:
+#     print(i)
+
+# MAP : it executes a specified function for each item in a iterable . The item is sent to function as parameter.
+# -----> data nikalna and us par kuch operation krna
+
+# example: 
+
+ages=[5,12,13,14,18,90,67,56]
+
+def myfun(x):
+    if x<18:
+        return False
+    else:
+        return True
+
+def myfun1(x):
+    return x*x
+
+adult=list(filter(myfun,ages))
+
+# for x in adult:
+#     print(x)
+
+square=map(myfun1,adult)
+for x in square:
+    print(x)
+
+
+adult=filter(lambda a: a>=18,ages)
+square=list(map(lambda a: a*a, adult))
+
+for i in square:
+    print(i)
