@@ -463,29 +463,73 @@
 
 # example: 
 
-ages=[5,12,13,14,18,90,67,56]
+# ages=[5,12,13,14,18,90,67,56]
 
-def myfun(x):
-    if x<18:
-        return False
-    else:
-        return True
+# def myfun(x):
+#     if x<18:
+#         return False
+#     else:
+#         return True
 
-def myfun1(x):
-    return x*x
+# def myfun1(x):
+#     return x*x
 
-adult=list(filter(myfun,ages))
+# adult=list(filter(myfun,ages))
 
-# for x in adult:
+# # for x in adult:
+# #     print(x)
+
+# square=map(myfun1,adult)
+# for x in square:
 #     print(x)
 
-square=map(myfun1,adult)
-for x in square:
-    print(x)
+
+# adult=filter(lambda a: a>=18,ages)
+# square=list(map(lambda a: a*a, adult))
+
+# for i in square:
+#     print(i)
 
 
-adult=filter(lambda a: a>=18,ages)
-square=list(map(lambda a: a*a, adult))
+# 1. Check Equivalent String Arrays
 
-for i in square:
-    print(i)
+# n = int(input())
+# arr1 = input().split()
+
+# m = int(input())
+# arr2 = input().split()
+
+# def check(a, b):
+#     if "".join(a) == "".join(b):
+#         return "true"
+#     else:
+#         return "false"
+
+# print(check(arr1,arr2))
+
+# check = lambda a, b: "true" if "".join(a) == "".join(b) else "false"
+# print(check(arr1, arr2))
+
+
+# 03-07-26
+# dictionary comphrehension
+
+# simple: 
+# d = {}
+# for x in range(1, 6):
+#     d[x] = x * x
+# print(d)
+
+# using comph.:
+
+# d = {x: x*x for x in range(1, 6)}
+# print(d)
+
+words=["apple","banana","cat"]
+d={}
+for x in words:
+    d[x]=len(x)
+print(d)
+
+d={x:len(x) for x in words}
+print(d)
