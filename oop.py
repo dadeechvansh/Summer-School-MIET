@@ -294,26 +294,145 @@
 # Property:
 # we use @property on any method in class to use the method as a property.
 
-class Student:
-    def __init__(self,phy,chem,math):
-        self.phy=phy
-        self.chem=chem
-        self.math=math
-        self.percentage
-    def calculatePercentage(self):
-        self.percentage
-    @property
-    def percentage(self):
-        return str((self.phy+self.chem+self.math)/3) + " %"
+# class Student:
+#     def __init__(self,phy,chem,math):
+#         self.phy=phy
+#         self.chem=chem
+#         self.math=math
+#         self.percentage
+#     def calculatePercentage(self):
+#         self.percentage
+#     @property
+#     def percentage(self):
+#         return str((self.phy+self.chem+self.math)/3) + " %"
 
-student1=Student(89,55,66)
-print(student1.percentage)
-print(student1.calculatePercentage())
-
-
-student1.phy=70
-print(student1.phy)
+# student1=Student(89,55,66)
 # print(student1.percentage)
-# print(student1.calculatePercentage)
-print(student1.percentage)
+# print(student1.calculatePercentage())
+
+
+# student1.phy=70
+# print(student1.phy)
+# # print(student1.percentage)
+# # print(student1.calculatePercentage)
+# print(student1.percentage)
+
+
+# Polymorphism:
+
+# in oops polymorphism allows the same method function to behave differently depending on the object
+
+# example: len() [built - in ploymorphism]
+# print(1+2)
+# print("jatin"+"anirudh") # concatination
+# print([1,2,3]+[4,2,3]) #merge
+
+
+# Key Points to remember:
+# Meaning : One Interface, many implementations.
+# Built in functions like len() and operations like (+) are examples of polymorphism in python
+
+# for eg:
+# object
+
+# Here we are using '+' for 3 different operations. So we can see 1 operator used in many forms.
+# So this is called operator overloading & it's an example of polymorphism.
+
+
+# Dunder Functions: __<FUNCTION_NAME>__ for eg- (__add__)
+
+# class Complex:
+#     def __init__(self,real,img):
+#         self.real=real
+#         self.img=img
+#     def showNumber(self):
+#         print(self.real,"i + ",self.img,"j")
+#     def __add__(self,num2):
+#         newreal=self.real;+num2.real
+#         newImg=self.img+num2.img
+#         return Complex(newreal,newImg)
+#     def add(self,num2):
+#         newreal=self.real;+num2.real
+#         newImg=self.img+num2.img
+#         return Complex(newreal,newImg)
+# num1=Complex(1,3)
+# num1.showNumber()
+
+# num2=Complex(4,5)
+# num2.showNumber()
+
+# num3=num1+num2
+# num3.showNumber()
+
+# num4=num1.add(num2)
+# num4.showNumber()
+
+
+# Question: Define a circle class to create a circle with radius r using the constructor.
+# define area() method of the class with calculates the area of the circle.
+# define a perimeter method of the class which allows you to calculate the perimeter of the circle.
+
+# class circle:
+#     pi=22/7
+#     def __init__(self,r):
+#         self.r=r
+#     def area(self):
+#         print("Area:", self.pi*self.r**2)
+#     def perimeter(self):
+#         print("Perimeter:",self.pi*2*self.r)
+    
+
+# obj1=circle(4)
+# obj1.area()
+# obj1.perimeter()
+
+# define a employee class with attributes role, department & salary. this class also has a showdetails() method.
+# create an engineer class that inherits properties from Employee.
+# class Employee:
+#     def __init__(self,role,dept,sal):
+#         self.role=role
+#         self.dept=dept
+#         self.sal=sal
+#     def showdetails(self):
+#         print(f"Role : {self.role}\nDepartment : {self.dept}\nSalary: {self.sal}")
+# # create an engineer class that inherits properties from Employee.
+# class Engineer(Employee):
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#         super().__init__("Engineer","IT",150)
+#     def showdetails(self):
+#         super().showdetails()
+#         print(f"Name : {self.name}\nAge : {self.age}")
+    
+
+# obj1=Employee("Peon","CSE - AIML", 90000)
+# obj1.showdetails()
+
+# obj2=Engineer("Software Engineer","nandu")
+# obj2.showdetails()
+
+# Create a class called order which stores item & its price
+
+# use dunder function __gt__() to convey that:
+#       order1>order2 if price of order1>price of order 2
+
+# class Order:
+#     def __init__(self, item, price):
+#         self.item = item
+#         self.price = price
+
+#     def __gt__(self, other):
+#         if self.price > other.price:
+#             print(f"{self.item} is costlier than {other.item}")
+#         else:
+#             print(f"{other.item} is costlier than or equal to {self.item}")
+
+
+# order1 = Order("Laptop", 60000)
+# order2 = Order("Mobile", 30000)
+
+# order1 > order2
+
+
 
