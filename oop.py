@@ -83,10 +83,10 @@
 # Static Method:
 # Methods that don't use self parameter (works at class level)
 
-class Student:
-    @staticmethod  #--- decorator
-    def college():
-        print("MIET")
+# class Student:
+#     @staticmethod  #--- decorator
+#     def college():
+#         print("MIET")
 
 # Decorator: decorators allow us to wrap  another function in 
 #            order to extend the behavious of the wrppped function without permanently modifying it.
@@ -95,39 +95,225 @@ class Student:
 
 # Abstraction: Hiding the implementation details of a class & only showing the essential features to the users is abstraction.
 
-class Car:
-    def __init__(self):
-        self.breaking=False
-        self.clutch=False
-        self.accelerating=False
-    def start(self):
-        self.clutch=True
-        self.accelerating=True
-        print("Car chalegayi")
+# class Car:
+#     def __init__(self):
+#         self.breaking=False
+#         self.clutch=False
+#         self.accelerating=False
+#     def start(self):
+#         self.clutch=True
+#         self.accelerating=True
+#         print("Car chalegayi")
 
-car1=Car()
-car1.start()
+# car1=Car()
+# car1.start()
 
 
 # Encapsulation: Wrapping data & features into a single unit(object)
 
 #que: create account class with 2 attributes, balance and account number.. now create methods for debit, credit and printing the balance.
 
-class Account:
-    def __init__(self, balance):
-        self.balance = balance
+# class Account:
+#     def __init__(self, balance):
+#         self.balance = balance
 
-    def credit(self, amt):
-        self.balance += amt
+#     def credit(self, amt):
+#         self.balance += amt
 
-    def debit(self, amt):
-        self.balance -= amt
+#     def debit(self, amt):
+#         self.balance -= amt
 
-    def show(self):
-        print("Balance:", self.balance)
+#     def show(self):
+#         print("Balance:", self.balance)
 
 
-a = Account(5000)
-a.credit(1000)
-a.debit(500)
-a.show()
+# a = Account(5000)
+# a.credit(1000)
+# a.debit(500)
+# a.show()
+
+# 13-07-26
+
+# del Keyword: used to delete object property or object itself.
+
+# del s1.name
+# del s1
+
+# class Student:
+#     def __init__(self,name):
+#         self.name=name
+# s1=Student("ram")
+# print(s1)
+# del s1
+# print(s1)
+
+# private(like) attributes & methods:
+
+# private attributes & methods are meant to be used only within the class and are not accessible from outside the class.
+
+# class Account:
+#     def __init__(self,acc_no,acc_pass):
+#         self.acc_no=acc_no
+#         self.__acc_pass=acc_pass #---- here (__)--- (double underscore) makes private
+
+#     def reset(self):
+#         print(self.__acc_pass)
+# acc1=Account("123456","abcde")
+# print(acc1.acc_no)
+# print(acc1.reset())
+# print(acc1.__acc_pass) # ---gives error as its an private attribute
+
+
+
+# Inheritance: When one class (child/derived) derives the properties & methods of another class (parent/base)
+
+# class Car:
+#     @staticmethod
+#     def start():
+#         print("Shuru Hoja")
+    
+#     @staticmethod
+#     def stop():
+#         print("rukja")
+
+# class Tata(Car):
+#     def __init__(self,name):
+#         self.name=name
+
+# car1=Tata("Nano")
+# print(car1.name)
+# print(car1.start())
+
+
+# Types of Inheritance:
+
+# 1. Single Inheritance
+# 2. Multilevel Inheritance : Multi level of parents and child
+# 3. Multiple Inheritance
+
+
+# 2. Multilevel Inheritance
+
+# class Car:
+#     @staticmethod
+#     def start():
+#         print("shuru hoja")
+#     @staticmethod
+#     def stop():
+#         print("rukja")
+
+# class Tata(Car):
+#     def __init__(self,name):
+#         self.name=name
+# class Mahindra(Car):
+#     def __init__(self,type):
+#         self.type=type
+
+# car1=Mahindra("Diesel")
+# Mahindra.start()
+
+
+
+#3. Multiple Inheritance
+# one derived class can inherit properties of multiple classes.
+
+# class A:
+#     varA="Hello java (sidhvi)"
+
+# class B:
+#     varB="hello Macbook(shivangi)"
+# class C(A,B):
+#     varC="Welcome Back"
+
+# c1=C()
+# print(c1.varC)
+# print(c1.varA)
+# print(c1.varB)
+
+
+# Super Method :
+
+# Super() method is access methods of parent class.
+
+# class Car:
+#     def __init__(self,type):
+#         self.type=type
+
+#     @staticmethod
+#     def start():
+#         print("car shuru")
+#     @staticmethod
+#     def stop():
+#         print("rukja")
+
+# class Tata(Car):
+#     def __init__(self,name,type):
+#         super().__init__(type)
+#         self.name=name
+
+# car1=Tata("Nano","electric")
+
+
+# Class Method:
+
+# A class method is bound to the class & recieves the class as an implicit 
+
+
+# class Person:
+#     name="anonymous"
+
+#     def collegename(self, name):
+#         self.name=name
+#         Person.name=name
+#         self.__class__.name=name
+# p1=Person()
+# p1.collegename("MIET")
+# print(p1.name)
+# print(Person.name)
+
+# but i want ki function ke andr hi class method ko direct access kr pau
+
+
+# class Person:
+#     name="anonymous"
+#     animal="cat"
+
+#     @classmethod
+#     def collegename(cls, name, animal):
+#         cls.name=name
+#         cls.animal=animal
+        
+# p1=Person()
+# p1.collegename("MIET","LION")
+# print(p1.name)
+# print(p1.animal)
+# print(Person.name)
+# print(Person.animal)
+
+
+# Property:
+# we use @property on any method in class to use the method as a property.
+
+class Student:
+    def __init__(self,phy,chem,math):
+        self.phy=phy
+        self.chem=chem
+        self.math=math
+        self.percentage
+    def calculatePercentage(self):
+        self.percentage
+    @property
+    def percentage(self):
+        return str((self.phy+self.chem+self.math)/3) + " %"
+
+student1=Student(89,55,66)
+print(student1.percentage)
+print(student1.calculatePercentage())
+
+
+student1.phy=70
+print(student1.phy)
+# print(student1.percentage)
+# print(student1.calculatePercentage)
+print(student1.percentage)
+
